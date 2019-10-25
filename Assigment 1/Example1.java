@@ -10,7 +10,7 @@ public class Example1 {
         System.out.println(largestNumber(digit));
     }
 
-    public static double largestNumber(final double digits) {
-        return Math.pow(10, digits) - 1;
+    public static int largestNumber(final double digits) {
+        return (int)(Math.pow(10, digits) - 1);
     }
 }

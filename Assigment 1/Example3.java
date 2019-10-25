@@ -13,7 +13,7 @@ public class Example3 {
         boolean isPalindrome = true;
         int length = inputString.toCharArray().length - 1;
         for (int i = 0; i <= length; i++) {
-            if (i != length - i) {
+            if (i != length - i && isPalindrome) {
                 isPalindrome &= inputString.toCharArray()[i] == inputString.toCharArray()[length - i];
             } else {
                 break;
