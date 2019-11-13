@@ -1,5 +1,4 @@
 import java.util.regex.Pattern;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.io.IOException;
@@ -15,7 +14,7 @@ public class exercise1 {
     
         String input = Files.readString(Path.of("example.txt"));
         
-        String regex = "^\\(?(\\d{2,4})\\)?[\\.\\-\\s]?(\\d{2,4})[\\.\\-\\s]?(\\d{3})[\\.\\-\\s]?(\\d{4})$";
+        String regex = "^\\(?((\\d[0])?\\d{2})\\)?[\\.\\-\\s]?(\\d{2,4})[\\.\\-\\s]?((\\d{3})[\\.\\-\\s]?(\\d{4}))$";
         Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE);
         
         Matcher matcher = pattern.matcher(input);
@@ -26,8 +25,8 @@ public class exercise1 {
 
         while(matcher.find()) {
             codes.add(matcher.group(1));
-            cities.add(matcher.group(2));
-            phones.add(matcher.group(3) + matcher.group(4));
+            cities.add(matcher.group(3));
+            phones.add(matcher.group(5) + matcher.group(6));
         }
         System.out.println("Operator codes: " + codes);
         System.out.println("City Codes: " + cities);
